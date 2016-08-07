@@ -15,6 +15,17 @@ version 3 of the License, or any later version.
 You can find this license at http://www.gnu.org/licenses/
 -->
 
+<?php 
+$video_array = array //Insert VideoIDs below
+('HMQkV5cTuoY', 
+'YSAqTdc-Y2g', 
+'ck5f9LzQmjY'); 
+
+
+shuffle($video_array);
+$video = $video_array[0]; 
+?>
+
 <title>Random Shit!</title>
     <meta name="keywords" content="video, random, whatever" />
     <head>
@@ -30,17 +41,5 @@ You can find this license at http://www.gnu.org/licenses/
             }
         </style>
     </head>
-
-
-<?php 
-$video_array = array //Insert VideoIDs below
-('HMQkV5cTuoY', 
-'YSAqTdc-Y2g', 
-'ck5f9LzQmjY'); 
-
-
-shuffle($video_array);
-$video = $video_array[0]; 
-?>
 
 <iframe width="100%" height="100%" src="https://www.youtube.com/embed/<?php echo $video; ?>?rel=0&amp;controls=0&amp;showinfo=0;autoplay=1;modestbranding=0;iv_load_policy=3;cc_load_policy=1" frameborder="0" allowfullscreen></iframe>
