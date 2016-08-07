@@ -16,17 +16,38 @@ You can find this license at http://www.gnu.org/licenses/
 -->
 
 <?php 
+
+//Settings
 $video_array = array //Insert VideoIDs below
 ('HMQkV5cTuoY', 
 'YSAqTdc-Y2g', 
 'ck5f9LzQmjY'); 
 
+//Page title
+$page_title = array
+('Random Shit!');
+
+//Page size. If you don't know what you're doing leave it like that. Normal settings are for a full, responsive page.
+$video_width = array
+('100%');
+$video_height = array
+('100%');
+
+//Player settings. Only change if you know what you're doing!
+$player_settings = array
+('?rel=0;amp;controls=0;showinfo=0;autoplay=1;modestbranding=0;iv_load_policy=3;cc_load_policy=1');
+
+//Stop editing. Now it should work :)
 
 shuffle($video_array);
 $video = $video_array[0]; 
+$width = $video_width[0];
+$height = $video_height[0];
+$title = $page_title[0];
+$player = $player_settings[0];
 ?>
 
-<title>Random Shit!</title> <!-- Page Title here, below meta keywords -->
+<title><?php echo $title; ?></title>
     <meta name="keywords" content="video, random, whatever" />
     <head>
         <style type="text/css">
@@ -42,4 +63,4 @@ $video = $video_array[0];
         </style>
     </head>
 
-<iframe width="100%" height="100%" src="https://www.youtube.com/embed/<?php echo $video; ?>?rel=0&amp&controls=0&showinfo=0&autoplay=1&modestbranding=0&iv_load_policy=3&cc_load_policy=1" frameborder="0" allowfullscreen="0"></iframe>
+<iframe width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $video; ?><?php echo $player; ?>" frameborder="0" allowfullscreen="0"></iframe>
