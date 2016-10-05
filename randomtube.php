@@ -31,19 +31,19 @@ $height = $video_height;
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title><?php echo $title; ?></title>
-        <meta name="keywords" content="video, random, whatever" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <head>
+      <title><?php echo $title; ?></title>
+      <meta name="keywords" content="video, random, whatever" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
     	<link href="rtstyle.css" rel="stylesheet">
-    </head>
+   </head>
 
 
-<div id="bg_container">
-<iframe id="bg" width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $video; ?><?php echo $player; ?>" frameborder="0" allowfullscreen="0"></iframe>
-</div>
+   <div id="bg_container">
+      <iframe id="bg" width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $video; ?><?php echo $player; ?>" frameborder="0" allowfullscreen="0"></iframe>
+   </div>
 
 
-<div id="content" style="display:inline"><h3 style="text-align: left" style="display:inline"><a href="https://youtube.com/watch?v=<?php echo $video; ?>">View on YouTube</a></h3></div> <div style="display:inline" id="content"><h3 style="text-align: right" style="display:inline"><a href="">Next Random Video</a></h3></div>
+   <div id="content" style="display:inline"><h3 style="text-align: left" style="display:inline"><a href="https://youtube.com/watch?v=<?php echo $video; ?>">View on YouTube</a></h3></div> <div style="display:inline" id="content"><h3 style="text-align: right" style="display:inline"><a href="">Next Random Video</a></h3></div>
 
 </html>
