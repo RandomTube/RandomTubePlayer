@@ -34,6 +34,7 @@ $video_height = array
 ('100%');
 
 //Player settings. Only change if you know what you're doing!
+//Autoplay not working on Android-Chrome!
 $player_settings = array
 ('?rel=0;amp;controls=0;showinfo=0;autoplay=1;modestbranding=0;iv_load_policy=3;cc_load_policy=1');
 
@@ -46,21 +47,25 @@ $height = $video_height[0];
 $title = $page_title[0];
 $player = $player_settings[0];
 ?>
-
-<title><?php echo $title; ?></title>
-    <meta name="keywords" content="video, random, whatever" />
+<!DOCTYPE html>
+<html>
     <head>
-        <style type="text/css">
-            body, html
-            {
-                margin: 0; padding: 0; height: 100%; overflow: hidden;
-            }
+        <title><?php echo $title; ?></title>
+        <meta name="keywords" content="video, random, whatever" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <style type="text/css">
+                body, html
+                {
+                    margin: 0; padding: 0; height: 100%; overflow: hidden;
+                }
 
-            #content
-            {
-                position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
-            }
-        </style>
+                #content
+                {
+                    position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
+                }
+            </style>
     </head>
-
-<iframe width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $video; ?><?php echo $player; ?>" frameborder="0" allowfullscreen="0"></iframe>
+    <body>
+        <iframe width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $video; ?><?php echo $player; ?>" frameborder="0" allowfullscreen="0"></iframe>
+    </body>
+</html>
