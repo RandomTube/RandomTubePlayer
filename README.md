@@ -13,7 +13,7 @@ An PHP Version greate than 5.4
 
 #Installation
 
-*Upload it to your Webfolder, enter the VideoID from YouTube in the $video_array list inside the randomtube.php (or how you named it)
+-Upload it to your Webfolder, enter the VideoID from YouTube in the $video_array list inside the randomtube.php (or how you named it)
 ```
 The VideoID is the part of the Youtube URL "watch?v=".
 For example:
