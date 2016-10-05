@@ -1,4 +1,6 @@
 # RandomTube - Play Random YouTube-Videos with PHP
+[![Twitter Follow](https://img.shields.io/twitter/follow/shields_io.svg?style=social&label=Follow&maxAge=2592000&style=flat)](https://twitter.com/FailPlayDE)[![License](https://img.shields.io/badge/License-GNU-lightgrey.svg?style=flat)](LICENSE)
+
 
 With this script you can play random videos from an list via PHP. An example you can find at https://mysl.it
 
