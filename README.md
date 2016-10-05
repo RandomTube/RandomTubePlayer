@@ -10,7 +10,7 @@ Autoplay does >not< work on Google-Chrome Android!
 
 ```
 A Webserver (Apache, Nginx, IIS)
-An PHP Version greate than 5.4
+PHP 5.4 or newer
 ```
 
 #Installation
