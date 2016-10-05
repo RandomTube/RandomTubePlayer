@@ -1,31 +1,19 @@
-<!-- 
-Created by: FailPlay.DE // Krenz Media
-The latest version of this code you can find on GitHub: https://github.com/FailPlayDE/RandomTube
-
-HowTo:
-Simply enter the VideoID from YouTube in the list below.
-The VideoID is the part of the Youtube URL "watch?v=".
-For example:
-The VideoID of "https://www.youtube.com/watch?v=YSAqTdc-Y2g" is "YSAqTdc-Y2g".
-
-
-This program is free software; you can redistribute it and/or modify it under the terms of 
-the GNU General Public License as published by the Free Software Foundation; either 
-version 3 of the License, or any later version.
-You can find this license at http://www.gnu.org/licenses/
--->
-
 <?php 
-
-//Settings
-$video_array = array //Insert VideoIDs below
-('HMQkV5cTuoY', 
+$video_array = array 
+(
 'YSAqTdc-Y2g', 
-'ck5f9LzQmjY'); 
+'IxPbgnO81sQ',
+'HMQkV5cTuoY', 
+'oBYEc0dWTGk',
+'bFEoMO0pc7k',
+'DI5_sQ8O-7Y',
+'2xWfEoFSlFU',
+'t-wFKNy0MZQ'
+); 
 
 //Page title
 $page_title = array
-('Random Shit!');
+('Your title');
 
 //Page size. If you don't know what you're doing leave it like that. Normal settings are for a full, responsive page.
 $video_width = array
@@ -34,12 +22,10 @@ $video_height = array
 ('100%');
 
 //Player settings. Only change if you know what you're doing!
-//Autoplay not working on Android-Chrome!
 $player_settings = array
-('?rel=0;amp;controls=0;showinfo=0;autoplay=1;modestbranding=0;iv_load_policy=3;cc_load_policy=1');
+('?rel=0;amp;controls=0;showinfo=0;autoplay=1;modestbranding=0;iv_load_policy=3;cc_load_policy=1;disablekb=1&amp;enablejsapi=1&amp;loop=1&amp');
 
 //Stop editing. Now it should work :)
-
 shuffle($video_array);
 $video = $video_array[0]; 
 $width = $video_width[0];
@@ -47,25 +33,31 @@ $height = $video_height[0];
 $title = $page_title[0];
 $player = $player_settings[0];
 ?>
-<!DOCTYPE html>
-<html>
-    <head>
-        <title><?php echo $title; ?></title>
-        <meta name="keywords" content="video, random, whatever" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <style type="text/css">
-                body, html
-                {
-                    margin: 0; padding: 0; height: 100%; overflow: hidden;
-                }
 
-                #content
-                {
-                    position:absolute; left: 0; right: 0; bottom: 0; top: 0px; 
-                }
-            </style>
+<title><?php echo $title; ?></title>
+    <meta name="keywords" content="video, random, whatever" />
+    <meta charset="utf-8">
+    <head>
+    <link href="style.css" 
+          rel="stylesheet">
+		
+	<script type="text/javascript">
+    window.smartlook||(function(d) {
+    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
+    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
+    c.charset='utf-8';c.src='//rec.getsmartlook.com/recorder.js';h.appendChild(c);
+    })(document);
+    smartlook('init', '7505c06d5aa73db41c75aa345e8a82b1a08a6efe');
+	</script>
     </head>
-    <body>
-        <iframe width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $video; ?><?php echo $player; ?>" frameborder="0" allowfullscreen="0"></iframe>
-    </body>
-</html>
+
+
+<div id="bg_container">
+<iframe id="bg" width="<?php echo $width; ?>" height="<?php echo $height; ?>" src="https://www.youtube.com/embed/<?php echo $video; ?><?php echo $player; ?>" frameborder="0" allowfullscreen="0"></iframe>
+</div>
+
+<!--
+<div id="content" style="display:inline"><h3 style="text-align: left" style="display:inline"><a href="https://youtube.com/watch?v=<?php echo $video; ?>">View on YouTube</a></h3></div> <div id="content" style="display:inline"><h3 style="text-align: right" style="display:inline"><a href="">Next Random Video</a></h3></div>
+-->
+
+<div id="content" style="display:inline"><h3 style="text-align: left" style="display:inline"><a href="https://youtube.com/watch?v=<?php echo $video; ?>">View on YouTube</a></h3></div> <div style="display:inline" id="content"><h3 style="text-align: right" style="display:inline"><a href="">Next Random Video</a></h3></div>
