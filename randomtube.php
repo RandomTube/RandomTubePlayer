@@ -28,21 +28,13 @@ $width = $video_width;
 $height = $video_height;
 ?>
 
-<title><?php echo $title; ?></title>
-    <meta name="keywords" content="video, random, whatever" />
-    <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
     <head>
-    <link href="style.css" 
-          rel="stylesheet">
-		
-	<script type="text/javascript">
-    window.smartlook||(function(d) {
-    var o=smartlook=function(){ o.api.push(arguments)},h=d.getElementsByTagName('head')[0];
-    var c=d.createElement('script');o.api=new Array();c.async=true;c.type='text/javascript';
-    c.charset='utf-8';c.src='//rec.getsmartlook.com/recorder.js';h.appendChild(c);
-    })(document);
-    smartlook('init', '7505c06d5aa73db41c75aa345e8a82b1a08a6efe');
-	</script>
+        <title><?php echo $title; ?></title>
+        <meta name="keywords" content="video, random, whatever" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link href="rtstyle.css" rel="stylesheet">
     </head>
 
 
@@ -52,3 +44,5 @@ $height = $video_height;
 
 
 <div id="content" style="display:inline"><h3 style="text-align: left" style="display:inline"><a href="https://youtube.com/watch?v=<?php echo $video; ?>">View on YouTube</a></h3></div> <div style="display:inline" id="content"><h3 style="text-align: right" style="display:inline"><a href="">Next Random Video</a></h3></div>
+
+</html>
