@@ -32,7 +32,7 @@ foreach($videos as $video)
 	
     <body>
         <div id="content">
-            <a href="https://youtube.com/watch?v=<?= $video; ?>" style="float:right">View on YouTube</a>
+            <a href="https://youtube.com/watch?v=<?= $video; ?>" style="float:right" target="_blank">Watch on YouTube</a>
             <a href=# onClick="window.location.reload()" >Next Random Video</a>        
         </div>
         
