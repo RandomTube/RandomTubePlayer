@@ -13,7 +13,6 @@ $volume = "10";
     shuffle($videos);
 
     foreach($videos as $video)
-        echo "new featuredProduct('', '". urlencode(trim($line)) ."'),\n<br />";
 
 ?>
 
