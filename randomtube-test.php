@@ -24,41 +24,46 @@ $volume = "10";
         <meta name="keywords" content="video, random, whatever" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-	    	body, html
-		{
+	    body, html {
 		       margin: 0; padding: 0; height: 100%; overflow: hidden; background:#000;
 		}
 
-		#videocontainer
-		{
+		#videocontainer {
 			position: relative; width: 100%; height: 0; padding-bottom: 56.25%; z-index:1;
 		}
 
-		#player 
-		{
+		#player {
 			position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index:1;
 		}
 
-		#content
-		{
+		#contentbkp {
                 	z-index:2; position:relative; font-size: 1.17em; color: hotpink;
 		}
             
-           	a:visited,a:link,a:hover
-		{
+		#content {
+                	z-index:2; position:fixed; bottom:8px; text-align:center; font-size: 1.17em; color: hotpink; 
+		}
+		
+		a:visited,a:link,a:hover {
 			color: hotpink;
 		}
+		
+			
 	    </style>
 	    
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     </head>
 	
     <body>
-        <div id="content">
-            <a href="https://youtube.com/watch?v=<?= $video; ?>" style="float:right">View on YouTube</a>
-            <a href=# onClick="window.location.reload()" >Next Random Video</a>        
+
+        <div id="content" style="float:center">
+			<strong>
+			<a href=# onClick="window.location.reload()" >Next Random Video</a>
+            <a href="https://youtube.com/watch?v=<?= $video; ?>">View on YouTube</a>
+			<strong>
         </div>
-        
+
+				
     <div style="float: both;"></div>
     
     <div class="videocontainer">
@@ -78,6 +83,7 @@ $volume = "10";
           events: {'onReady': onPlayerReady}
         });
       }
+		
       function onPlayerReady(event) {
         event.target.setVolume(<?= $volume ?>);
         event.target.playVideo();
