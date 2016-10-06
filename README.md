@@ -28,3 +28,8 @@ The VideoID of "https://www.youtube.com/watch?v=YSAqTdc-Y2g" is "YSAqTdc-Y2g".
 #License
 
 See [LICENSE](LICENSE)
+
+
+#Special Thanks
+
+Special thanks to [@tooti312](https://github.com/tooti312) for helping me understand this better ^^
