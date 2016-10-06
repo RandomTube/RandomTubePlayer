@@ -1,4 +1,6 @@
 <?php 
+//How this looks like: http://mysl.it/randomtube/indev/000.php
+
 //Page title
 $title = 'Random shit';
 
