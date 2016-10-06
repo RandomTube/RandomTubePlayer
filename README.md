@@ -2,7 +2,7 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/shields_io.svg?style=social&label=Follow&maxAge=2592000&style=flat)](https://twitter.com/FailPlayDE)  [![License](https://img.shields.io/badge/License-GNU-lightgrey.svg?style=flat)](LICENSE)
 
 
-With this script you can play random videos from an list via PHP. You get also the YouTube-Link on this page, can start the next Video and you can share this video (comind soon). An example you can find at https://mysl.it/000.php
+With this script you can play random videos from an list via PHP. You get also the YouTube-Link on this page, can start the next Video and you can share this video (comind soon). An example you can find at https://mysl.it/randomtube/indev/
 
 Autoplay does >not< work on Google-Chrome Android! Will be fixed soon!
 
