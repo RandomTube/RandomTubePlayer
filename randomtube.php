@@ -8,10 +8,9 @@ $volume = "10";
 
 //Stop editing. Now it should work :)
 
-    $videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-    shuffle($videos);
-
-    foreach($videos as $video)
+$videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+shuffle($videos);
+foreach($videos as $video)
 
 ?>
 
@@ -23,30 +22,11 @@ $volume = "10";
         <meta name="keywords" content="video, random, whatever" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
-	    	body, html
-		{
-		       margin: 0; padding: 0; height: 100%; overflow: hidden; background:#000;
-		}
-
-		#videocontainer
-		{
-			position: relative; width: 100%; height: 0; padding-bottom: 56.25%; z-index:1;
-		}
-
-		#player 
-		{
-			position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index:1;
-		}
-
-		#content
-		{
-                	z-index:2; position:relative; font-size: 1.17em; color: hotpink;
-		}
-            
-           	a:visited,a:link,a:hover
-		{
-			color: hotpink;
-		}
+	    	body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background:#000; }
+		#videocontainer { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; z-index:1; }
+		#player { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index:1; }
+		#content { z-index:2; position:relative; font-size: 1.17em; color: hotpink; }
+            	a:visited,a:link,a:hover { color: hotpink; }
 	    </style>
     </head>
 	
@@ -75,6 +55,7 @@ $volume = "10";
           events: {'onReady': onPlayerReady}
         });
       }
+	    
       function onPlayerReady(event) {
         event.target.setVolume(<?= $volume ?>);
         event.target.playVideo();
