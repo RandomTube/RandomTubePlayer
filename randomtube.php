@@ -9,8 +9,6 @@ $volume = "10";
 //Stop editing. Now it should work :)
 
 $videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-shuffle($videos);
-foreach($videos as $video)
 
 ?>
 
@@ -50,7 +48,7 @@ foreach($videos as $video)
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          videoId: '<?= $video ?>',
+          videoId: '<?= $videos[rand(0, count($videos) -1)] ?>',
           playerVars: { 'rel':0,'controls':1, 'showinfo':0, 'autoplay':1, 'modestbranding':0, 'iv_load_policy':3, 'cc_load_policy':1, 'disablekb':1,  'enablejsapi':0,  'loop':1 },
           events: {'onReady': onPlayerReady}
         });
