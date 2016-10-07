@@ -25,12 +25,12 @@ $videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 		#player { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index:1; }
 		#content { z-index:2; position:relative; font-size: 1.17em; color: hotpink; }
             	a:visited,a:link,a:hover { color: hotpink; }
-	    </style>
+	</style>
     </head>
 	
     <body>
         <div id="content">
-            <a href="https://youtube.com/watch?v=<?= $video; ?>" style="float:right" target="_blank">Watch on YouTube</a>
+            <a href="https://youtube.com/watch?v=<?= $videos[rand(0, count($videos) -1)] ?>" style="float:right" target="_blank">Watch on YouTube</a>
             <a href=# onClick="window.location.reload()" >Next Random Video</a>        
         </div>
         
