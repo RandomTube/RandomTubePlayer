@@ -6,6 +6,9 @@ With this script you can play random videos from an list via PHP. An example you
 
 Autoplay does >not< work on Google-Chrome Android!
 
+#Big Update soon!
+Actually I'm working on a huge work-over which will be released soon. You cann see my actual work on the [Indev Branch](https://github.com/FailPlayDE/RandomTube/tree/indev)
+
 #Server Requirements
 
 ```
