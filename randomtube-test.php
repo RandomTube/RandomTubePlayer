@@ -11,6 +11,16 @@ $volume = "10";
 
 $videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
+	if (isset($_GET["v"])) {
+	//Play video requested (http://example.com/randomtube.php?v=VIDEOID)
+	$video = $_GET["v"];
+}
+	else {
+	//Play a random video
+	$video = $videos[rand(0, count($videos) -1)];
+}
+
+
 ?>
 
 
@@ -34,13 +44,12 @@ $videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         <div id="content" style="float:center">
 			<strong>
-			<a href=# onClick="window.location.reload()" >Next Random Video</a>
-            <a href="https://youtube.com/watch?v=<?= $videos[rand(0, count($videos) -1)] ?>" target="_blank">Watch on YouTube</a>
+			<a href="<?= basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>" >Next Random Video</a>
+            <a href="https://youtube.com/watch?v=<?= $video ?>" target="_blank">Watch on YouTube</a>
+			<a> Share: <?= $video ?> </a> <!-- Only for testing, will edit this later -->
 			<strong>
         </div>
 
-				
-    <div style="float: both;"></div>
     
     <div class="videocontainer">
         <div id="player"></div>
@@ -54,7 +63,7 @@ $videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
       var player;
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
-          videoId: '<?= $videos[rand(0, count($videos) -1)] ?>',
+          videoId: '<?= $video ?>',
           playerVars: { 'rel':0,'controls':1, 'showinfo':0, 'autoplay':1, 'modestbranding':0, 'iv_load_policy':3, 'cc_load_policy':1, 'disablekb':1,  'enablejsapi':0,  'loop':1 },
           events: {'onReady': onPlayerReady}
         });
