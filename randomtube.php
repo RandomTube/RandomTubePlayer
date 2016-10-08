@@ -1,35 +1,25 @@
 <?php 
 //How this looks like: https://mysl.it/randomtube/indev/000.php
-
 //Page title
 $title = "Random shit";
-
 //Volume 100 = 100%, 10 = 10% etc
 $volume = "25";
-
 //Name of your videos file, default: videos.txt
 $file = "videos.txt";
-
 //Color of links. Example: hotpink. You can find more html colors here: http://www.w3schools.com/colors/colors_names.asp
 $color = "tomato";
-
 //http or https?
-$ssl = "https";
-
+$ssl = "http";
 //Stop editing. Now it should work :)
-
-$videos = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-
 	if (isset($_GET["v"])) {
 	//Play video requested (http://example.com/randomtube.php?v=VIDEOID)
 	$video = $_GET["v"];
 }
 	else {
 	//Play a random video
+	$videos = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 	$video = $videos[rand(0, count($videos) -1)];
 }
-
-
 ?>
 
 
