@@ -1,4 +1,5 @@
 <?php 
+//How this looks like: https://mysl.it/randomtube/indev/000.php
 
 //Page title
 $title = "Random shit";
@@ -13,7 +14,7 @@ $file = "videos.txt";
 $color = "tomato";
 
 //http or https?
-$ssl = "http";
+$ssl = "https";
 
 //Stop editing. Now it should work :)
 
@@ -58,7 +59,7 @@ $videos = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
         <div id="content">
 			<strong>
-			<a href="<?= basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>" style="float:center">Next Random Video</a>
+			<a href="<?= ($ssl . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'])?>" style="float:center">Next Random Video</a>
             <a href="https://youtube.com/watch?v=<?= $video ?>" target="_blank" style="float:left">Watch on YouTube</a>
 			<a href="#" style="float:right" onclick="share()"> Share this video </a>
 			</strong>
