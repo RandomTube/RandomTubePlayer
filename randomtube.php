@@ -1,16 +1,31 @@
 <?php 
-//How this looks like: https://mysl.it/randomtube/indev/000.php
+
 //Page title
 $title = "Random shit";
+
 //Volume 100 = 100%, 10 = 10% etc
 $volume = "25";
+
 //Name of your videos file, default: videos.txt
 $file = "videos.txt";
-//Color of links. Example: hotpink. You can find more html colors here: http://www.w3schools.com/colors/colors_names.asp
+
+//Color of links. Example: hotpink or #F0F8FF. You can find more html colors here: http://www.w3schools.com/colors/colors_names.asp
 $color = "tomato";
-//http or https?
-$ssl = "http";
+
+
 //Stop editing. Now it should work :)
+
+if (isset($_SERVER['HTTPS']) &&
+    ($_SERVER['HTTPS'] == 'on' || $_SERVER['HTTPS'] == 1) ||
+    isset($_SERVER['HTTP_X_FORWARDED_PROTO']) &&
+    $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') {
+  $ssl = 'https://';
+}
+else {
+  $ssl = 'http://';
+}
+
+
 	if (isset($_GET["v"])) {
 	//Play video requested (http://example.com/randomtube.php?v=VIDEOID)
 	$video = $_GET["v"];
@@ -20,6 +35,8 @@ $ssl = "http";
 	$videos = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 	$video = $videos[rand(0, count($videos) -1)];
 }
+
+
 ?>
 
 
@@ -39,7 +56,7 @@ $ssl = "http";
 	
 	<script>
 	function share() {
-  	  var sharecode = prompt("You can share this video with the link below.", "<?= ($ssl . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'] . "?v=" . $video); ?>");
+  	  var sharecode = prompt("You can share this video with the link below.", "<?= ($ssl . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'] . "?v=" . $video); ?>");
 	}
 	</script>
 	
@@ -49,7 +66,7 @@ $ssl = "http";
 
         <div id="content">
 			<strong>
-			<a href="<?= ($ssl . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'])?>" style="float:center">Next Random Video</a>
+			<a href="<?= ($ssl . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'])?>" style="float:center">Next Random Video</a>
             <a href="https://youtube.com/watch?v=<?= $video ?>" target="_blank" style="float:left">Watch on YouTube</a>
 			<a href="#" style="float:right" onclick="share()"> Share this video </a>
 			</strong>
