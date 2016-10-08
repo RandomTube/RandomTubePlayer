@@ -1,15 +1,24 @@
 <?php 
-//How this looks like: http://mysl.it/randomtube/indev/000.php
+//How this looks like: https://mysl.it/randomtube/indev/000.php
 
 //Page title
 $title = "Random shit";
 
 //Volume 100 = 100%, 10 = 10% etc
-$volume = "10";
+$volume = "25";
+
+//Name of your videos file, default: videos.txt
+$file = "videos.txt";
+
+//Color of links. Example: hotpink. You can find more html colors here: http://www.w3schools.com/colors/colors_names.asp
+$color = "tomato";
+
+//http or https?
+$ssl = "http";
 
 //Stop editing. Now it should work :)
 
-$videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+$videos = file($file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 
 	if (isset($_GET["v"])) {
 	//Play video requested (http://example.com/randomtube.php?v=VIDEOID)
@@ -34,20 +43,26 @@ $videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 	    body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; background:#000; }
 		#videocontainer { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; z-index:1; }
 		#player { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index:1; }
-		#contentbkp { z-index:2; position:relative; font-size: 1.17em; color: hotpink; }
-		#content { z-index:2; position:fixed; bottom:8px; text-align:center; font-size: 1.17em; color: hotpink; }
-		a:visited,a:link,a:hover { color: hotpink; }
+		#content { z-index:2; position:relative; font-size: 1.17em; color: <?= $color ?>; text-align: center;}
+		a:visited,a:link,a:hover { color: <?= $color ?>; }
 	</style>
-    </head>
 	
+	<script>
+	function share() {
+  	  var sharecode = prompt("You can share this video with the link below.", "<?= ($ssl . "://" . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'] . "?v=" . $video); ?>");
+	}
+	</script>
+	
+    </head>
+
     <body>
 
-        <div id="content" style="float:center">
+        <div id="content">
 			<strong>
-			<a href="<?= basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>" >Next Random Video</a>
-            <a href="https://youtube.com/watch?v=<?= $video ?>" target="_blank">Watch on YouTube</a>
-			<a> Share: <?= $video ?> </a> <!-- Only for testing, will edit this later -->
-			<strong>
+			<a href="<?= basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']); ?>" style="float:center">Next Random Video</a>
+            <a href="https://youtube.com/watch?v=<?= $video ?>" target="_blank" style="float:left">Watch on YouTube</a>
+			<a href="#" style="float:right" onclick="share()"> Share this video </a>
+			</strong>
         </div>
 
     
@@ -64,7 +79,7 @@ $videos = file("videos.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           videoId: '<?= $video ?>',
-          playerVars: { 'rel':0,'controls':1, 'showinfo':0, 'autoplay':1, 'modestbranding':0, 'iv_load_policy':3, 'cc_load_policy':1, 'disablekb':1,  'enablejsapi':0,  'loop':1 },
+          playerVars: { 'rel':0,'controls':1, 'showinfo':0, 'autoplay':1, 'modestbranding':0, 'iv_load_policy':3, 'disablekb':1,  'enablejsapi':0,  'loop':1 },
           events: {'onReady': onPlayerReady}
         });
       }
