@@ -2,15 +2,9 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/shields_io.svg?style=social&label=Follow&maxAge=2592000&style=flat)](https://twitter.com/FailPlayDE)  [![License](https://img.shields.io/badge/License-GNU-lightgrey.svg?style=flat)](LICENSE)
 
 
-With this script you can play random videos from an list via PHP. You get also the YouTube-Link on this page, can start the next Video and you can share this video (comind soon). An example you can find at https://mysl.it/randomtube/indev/
+With this script you can play random videos from an list via PHP. You get also the YouTube-Link on this page, can start the next Video and you can share this video (comind soon). An example you can find at https://failplay.de/rt/gronkh.php
 
 Autoplay does >not< work on Google-Chrome Android! Will be fixed soon!
-
-#IN DEVELOPMENT VERSION
-There are still many things that shouldn't be like it is actually. Im working on it ^-^
-
-#Big Update soon!
-Actually I'm working on a huge work-over which will be released soon. You cann see my actual work on the [Indev Branch](https://github.com/FailPlayDE/RandomTube/tree/indev)
 
 #Server Requirements
 
