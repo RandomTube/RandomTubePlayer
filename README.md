@@ -1,4 +1,4 @@
-# RandomTube - Play Random YouTube-Videos with PHP (Development edition)
+# RandomTube - Play Random YouTube-Videos with PHP
 [![Twitter Follow](https://img.shields.io/twitter/follow/shields_io.svg?style=social&label=Follow&maxAge=2592000&style=flat)](https://twitter.com/FailPlayDE)  [![License](https://img.shields.io/badge/License-GNU-lightgrey.svg?style=flat)](LICENSE)
 
 
