@@ -9,6 +9,9 @@ Autoplay does >not< work on Google-Chrome Android! Will be fixed soon!
 #IN DEVELOPMENT VERSION
 There are still many things that shouldn't be like it is actually. Im working on it ^-^
 
+#Big Update soon!
+Actually I'm working on a huge work-over which will be released soon. You cann see my actual work on the [Indev Branch](https://github.com/FailPlayDE/RandomTube/tree/indev)
+
 #Server Requirements
 
 ```
@@ -33,3 +36,4 @@ See [LICENSE](LICENSE)
 #Special Thanks
 
 Special thanks to [@tooti312](https://github.com/tooti312) for helping me understand this better ^^
+
